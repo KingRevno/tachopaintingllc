@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import type { QuoteFormData } from "@/lib/constants";
 
-const resend = new Resend(process.env.RESEND_API_KEY ?? "");
-
 // TODO: Switch back to "tachopaintingllc@gmail.com" before going live
 const BUSINESS_EMAIL = "Marcellomak@gmail.com";
 const BUSINESS_PHONE = "(919) 931-0841";
@@ -216,13 +214,18 @@ function buildCustomerEmail(data: QuoteFormData): string {
 
 export async function POST(req: NextRequest) {
   try {
-    if (!process.env.RESEND_API_KEY) {
+    // Guard first — before instantiating Resend so a missing key can never crash module load
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
       console.error("RESEND_API_KEY is not set.");
       return NextResponse.json(
         { success: false, error: "Server misconfiguration: email service not configured." },
         { status: 500 }
       );
     }
+
+    // Instantiate per-request so module load never throws
+    const resend = new Resend(apiKey);
 
     const data: QuoteFormData = await req.json();
 
