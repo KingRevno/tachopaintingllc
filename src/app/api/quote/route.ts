@@ -3,7 +3,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const BUSINESS_EMAIL = "tachopaintingllc@gmail.com";
+// TODO: Switch back to "tachopaintingllc@gmail.com" before going live
+const BUSINESS_EMAIL = "Marcellomak@gmail.com";
 const BUSINESS_PHONE = "(919) 931-0841";
 const SITE_URL = "tachopaintingllc.com";
 
