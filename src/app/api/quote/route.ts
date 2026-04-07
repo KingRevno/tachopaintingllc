@@ -213,6 +213,14 @@ function buildCustomerEmail(data: QuoteFormData): string {
 
 export async function POST(req: NextRequest) {
   try {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set.");
+      return NextResponse.json(
+        { success: false, error: "Server misconfiguration: email service not configured." },
+        { status: 500 }
+      );
+    }
+
     const data: QuoteFormData = await req.json();
 
     if (!data.fullName || !data.phone || !data.email || !data.city) {
