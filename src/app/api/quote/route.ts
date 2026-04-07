@@ -230,27 +230,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const [businessResult, customerResult] = await Promise.all([
-      resend.emails.send({
-        from: "Tacho Painting Website <onboarding@resend.dev>",
-        to: [BUSINESS_EMAIL],
-        subject: `🎨 New Quote Request — ${data.fullName} | ${data.service} | ${data.budgetRange}`,
-        html: buildBusinessEmail(data),
-      }),
-      resend.emails.send({
-        from: "Tacho Painting LLC <onboarding@resend.dev>",
-        to: [data.email],
-        subject: "We got your request — Tacho Painting LLC",
-        html: buildCustomerEmail(data),
-      }),
-    ]);
+    // Business notification is critical — send first and fail hard if it errors
+    const businessResult = await resend.emails.send({
+      from: "Tacho Painting Website <onboarding@resend.dev>",
+      to: [BUSINESS_EMAIL],
+      subject: `New Quote Request — ${data.fullName} | ${data.service} | ${data.budgetRange}`,
+      html: buildBusinessEmail(data),
+    });
 
-    if (businessResult.error || customerResult.error) {
-      console.error("Resend error:", businessResult.error ?? customerResult.error);
+    if (businessResult.error) {
+      console.error("Business email error:", businessResult.error);
       return NextResponse.json(
         { success: false, error: "Email delivery failed." },
         { status: 500 }
       );
+    }
+
+    // Customer confirmation is best-effort — log failures but don't surface to user
+    const customerResult = await resend.emails.send({
+      from: "Tacho Painting LLC <onboarding@resend.dev>",
+      to: [data.email],
+      subject: "We got your request — Tacho Painting LLC",
+      html: buildCustomerEmail(data),
+    });
+
+    if (customerResult.error) {
+      console.warn("Customer confirmation email failed (non-critical):", customerResult.error);
     }
 
     return NextResponse.json({ success: true });
