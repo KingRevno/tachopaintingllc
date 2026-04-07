@@ -1,3 +1,66 @@
+export type Service = {
+  id: number;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  keywords: string[];
+};
+
+export const SERVICES: Service[] = [
+  {
+    id: 1,
+    slug: "interior-painting",
+    title: "High-End Interior Painting",
+    subtitle: "The Full-Home Refresh",
+    description:
+      "Complete interior transformation with meticulous prep work — sanding, caulking, priming — and a flawless finish that elevates every room in your home.",
+    icon: "Home",
+    keywords: ["Interior painting", "Full home refresh", "Premium wall finishes"],
+  },
+  {
+    id: 2,
+    slug: "cabinet-refinishing",
+    title: "Cabinet Refinishing",
+    subtitle: "Factory Finishes",
+    description:
+      "Restore or completely transform your kitchen and bathroom cabinets with a factory-quality spray finish. A fraction of the cost of replacement.",
+    icon: "Layers",
+    keywords: ["Cabinet refinishing", "Kitchen cabinet painting", "Factory spray finish"],
+  },
+  {
+    id: 3,
+    slug: "exterior-coatings",
+    title: "Specialty Exterior Coatings",
+    subtitle: "Including Limewashing",
+    description:
+      "Protect and beautify your home's exterior with specialty coatings and trending limewash finishes that add texture, depth, and lasting curb appeal.",
+    icon: "Sun",
+    keywords: ["Exterior painting", "Limewash", "Specialty coatings"],
+  },
+  {
+    id: 4,
+    slug: "deck-restoration",
+    title: "Deck & Wood Restoration",
+    subtitle: "Staining & Sealing",
+    description:
+      "Bring your weathered deck or wood surfaces back to life with professional staining and sealing that protects against the elements year-round.",
+    icon: "TreePine",
+    keywords: ["Deck staining", "Wood restoration", "Deck sealing"],
+  },
+  {
+    id: 5,
+    slug: "epoxy-floors",
+    title: "Epoxy & Concrete Floor Coatings",
+    subtitle: "Garage & Commercial Floors",
+    description:
+      "Transform your garage or commercial floor with a durable, high-gloss epoxy coating that's easy to clean and built to last.",
+    icon: "Layers2",
+    keywords: ["Epoxy floors", "Garage floor coating", "Concrete coating"],
+  },
+];
+
 export const BUSINESS = {
   name: "Tacho Painting LLC",
   tagline: "Done Right the First Time. Every Time.",
