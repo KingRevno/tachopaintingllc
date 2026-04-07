@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import type { QuoteFormData } from "@/lib/constants";
 
 // TODO: Switch back to "tachopaintingllc@gmail.com" before going live
-const BUSINESS_EMAIL = "Marcellomak@gmail.com";
+const BUSINESS_EMAIL = "marcellomak@gmail.com";
 const BUSINESS_PHONE = "(919) 931-0841";
 const SITE_URL = "tachopaintingllc.com";
 
