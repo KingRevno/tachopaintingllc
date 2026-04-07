@@ -1,3 +1,20 @@
+export type QuoteFormData = {
+  fullName: string;
+  phone: string;
+  email: string;
+  city: string;
+  referralSource: string;
+  service: string;
+  propertyType: string;
+  projectDescription: string;
+  squareFootage: string;
+  startTimeline: string;
+  contactMethod: string;
+  bestTime: string;
+  budgetRange: string;
+  additionalNotes: string;
+};
+
 export type Service = {
   id: number;
   slug: string;

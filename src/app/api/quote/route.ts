@@ -1,32 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import type { QuoteFormData } from "@/lib/constants";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY ?? "");
 
 // TODO: Switch back to "tachopaintingllc@gmail.com" before going live
 const BUSINESS_EMAIL = "Marcellomak@gmail.com";
 const BUSINESS_PHONE = "(919) 931-0841";
 const SITE_URL = "tachopaintingllc.com";
-
-export type QuoteFormData = {
-  // Step 1
-  fullName: string;
-  phone: string;
-  email: string;
-  city: string;
-  referralSource: string;
-  // Step 2
-  service: string;
-  propertyType: string;
-  projectDescription: string;
-  squareFootage: string;
-  // Step 3
-  startTimeline: string;
-  contactMethod: string;
-  bestTime: string;
-  budgetRange: string;
-  additionalNotes: string;
-};
 
 function formatTimestamp(): string {
   return new Date().toLocaleString("en-US", {

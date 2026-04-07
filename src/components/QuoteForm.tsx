@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Check, Loader2, CheckCircle2 } from "lucide-react";
-import type { QuoteFormData } from "@/app/api/quote/route";
+import type { QuoteFormData } from "@/lib/constants";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
