@@ -153,11 +153,12 @@ function buildCustomerEmail(data: QuoteFormData): string {
     .header h1 { color: #ffffff; margin: 0; font-size: 22px; font-weight: 700; }
     .body { padding: 36px; }
     p { font-size: 15px; line-height: 1.7; color: #374151; margin: 0 0 16px; }
-    .recap { background: #f0f4f8; border-radius: 10px; padding: 20px 24px; margin: 24px 0; }
-    .recap-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e5e7eb; font-size: 14px; }
-    .recap-row:last-child { border-bottom: none; }
-    .recap-label { color: #6b7280; }
-    .recap-value { font-weight: 600; color: #1a1a2e; text-align: right; max-width: 60%; }
+    .recap { background: #f0f4f8; border-radius: 10px; padding: 4px 0; margin: 24px 0; }
+    .recap table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .recap td { padding: 10px 20px; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+    .recap tr:last-child td { border-bottom: none; }
+    .recap-label { color: #6b7280; width: 40%; white-space: nowrap; }
+    .recap-value { font-weight: 600; color: #1a1a2e; }
     .cta-phone { font-size: 16px; font-weight: 700; color: #2B5A8A; }
     .signature { margin-top: 32px; padding-top: 20px; border-top: 1px solid #e5e7eb; font-size: 14px; color: #6b7280; }
     .signature strong { color: #1a1a2e; font-size: 15px; display: block; margin-bottom: 4px; }
@@ -174,22 +175,24 @@ function buildCustomerEmail(data: QuoteFormData): string {
       <p>Thanks for reaching out to <strong>Tacho Painting LLC</strong>. We've received your estimate request and will be in touch within <strong>1 business day</strong>.</p>
 
       <div class="recap">
-        <div class="recap-row">
-          <span class="recap-label">Service</span>
-          <span class="recap-value">${data.service}</span>
-        </div>
-        <div class="recap-row">
-          <span class="recap-label">Location</span>
-          <span class="recap-value">${data.city}</span>
-        </div>
-        <div class="recap-row">
-          <span class="recap-label">Preferred Contact</span>
-          <span class="recap-value">${data.contactMethod}</span>
-        </div>
-        <div class="recap-row">
-          <span class="recap-label">Timeline</span>
-          <span class="recap-value">${data.startTimeline}</span>
-        </div>
+        <table>
+          <tr>
+            <td class="recap-label">Service</td>
+            <td class="recap-value">${data.service}</td>
+          </tr>
+          <tr>
+            <td class="recap-label">Location</td>
+            <td class="recap-value">${data.city}</td>
+          </tr>
+          <tr>
+            <td class="recap-label">Preferred Contact</td>
+            <td class="recap-value">${data.contactMethod}</td>
+          </tr>
+          <tr>
+            <td class="recap-label">Timeline</td>
+            <td class="recap-value">${data.startTimeline}</td>
+          </tr>
+        </table>
       </div>
 
       <p>In the meantime, feel free to call or text us at <span class="cta-phone">${BUSINESS_PHONE}</span> — we're happy to answer any questions.</p>
