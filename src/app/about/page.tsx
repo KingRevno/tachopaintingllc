@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
-  PaintRoller,
   ArrowRight,
   Award,
   Users,
@@ -80,20 +80,6 @@ const PROCESS_STEPS = [
   },
 ];
 
-// ─── Image placeholder ────────────────────────────────────────────────────────
-
-function PhotoPlaceholder({ label }: { label: string }) {
-  return (
-    // TODO: Replace with actual photo once received
-    <div className="flex h-full min-h-64 w-full items-center justify-center bg-gainsboro">
-      <div className="flex flex-col items-center gap-3 rounded-2xl border-2 border-dashed border-denim/25 bg-white/60 px-10 py-12 text-center">
-        <PaintRoller size={32} className="text-denim/40" strokeWidth={1.5} />
-        <p className="text-xs font-medium text-[#1a1a2e]/40">{label}</p>
-      </div>
-    </div>
-  );
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AboutPage() {
@@ -115,8 +101,14 @@ export default function AboutPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
         <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16">
           {/* Photo */}
-          <div className="overflow-hidden rounded-2xl md:w-1/2">
-            <PhotoPlaceholder label="Alan on a job site — photo coming soon" />
+          <div className="relative overflow-hidden rounded-2xl md:w-1/2" style={{ minHeight: "420px" }}>
+            <Image
+              src="/images/alan.jpg"
+              alt="Alan Juarez, owner of Tacho Painting LLC, standing in front of a completed project"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
 
           {/* Text */}
@@ -130,22 +122,24 @@ export default function AboutPage() {
             </h2>
             <div className="mt-5 space-y-4 text-base leading-relaxed text-[#1a1a2e]/65">
               <p>
-                Tacho Painting LLC was founded by Alan Juarez-Mendoza, a
-                craftsman who learned the trade from the ground up and spent
-                over a decade perfecting his technique across hundreds of
-                residential and commercial projects in eastern North Carolina.
+                Tacho Painting LLC was founded by Alan Juarez, a craftsman who
+                learned the trade from the ground up and spent over a decade
+                perfecting his technique across hundreds of residential and
+                commercial projects in eastern North Carolina.
               </p>
               <p>
                 What started as a one-man operation driven by a simple belief —
                 that every client deserves elite-level work regardless of
-                project size — has grown into a trusted local company serving
-                11 counties across NC.
+                project size — has grown into a trusted local team serving 11
+                counties across NC.
               </p>
               <p>
-                Alan runs every project personally alongside a hand-picked crew
-                that shares the same standard. Kimberly manages operations,
-                client communications, and scheduling to make sure every
-                interaction is smooth from first call to final walkthrough.
+                Today, Gamaliel Juarez Sanchez leads all on-site craftsmanship
+                with decades of hands-on mastery, Jose Pacheco manages client
+                relations and project walkthroughs, and Kimberly Pacheco keeps
+                scheduling and communications running seamlessly — so every
+                client feels taken care of from the first call to the final
+                walkthrough.
               </p>
             </div>
             <Link
@@ -187,42 +181,86 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           {/* Alan */}
           <div className="overflow-hidden rounded-2xl border border-gainsboro bg-white">
-            <div className="h-72 w-full">
-              {/* TODO: Replace with Alan's headshot once received */}
-              <PhotoPlaceholder label="Alan Juarez-Mendoza — photo coming soon" />
+            <div className="relative h-72 w-full overflow-hidden">
+              <Image
+                src="/images/alan.jpg"
+                alt="Alan Juarez, Owner and Founder of Tacho Painting LLC"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="p-7">
+              <h3 className="text-xl font-bold text-[#1a1a2e]">Alan Juarez</h3>
+              <p className="mt-1 text-sm font-semibold text-denim">
+                Owner & Founder
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#1a1a2e]/60">
+                Alan leads the company with a vision for quality and
+                reliability, ensuring every project under the Tacho Painting
+                name meets his high standards for excellence.
+              </p>
+            </div>
+          </div>
+
+          {/* Gamaliel */}
+          <div className="overflow-hidden rounded-2xl border border-gainsboro bg-white">
+            <div className="flex h-72 w-full items-center justify-center bg-gainsboro/50">
+              {/* TODO: Replace with Gamaliel's photo once received */}
+              <p className="text-xs font-medium text-[#1a1a2e]/40">Photo coming soon</p>
             </div>
             <div className="p-7">
               <h3 className="text-xl font-bold text-[#1a1a2e]">
-                Alan Juarez-Mendoza
+                Gamaliel Juarez Sanchez
               </h3>
               <p className="mt-1 text-sm font-semibold text-denim">
-                Owner & Lead Painter
+                Lead Painter
               </p>
               <p className="mt-3 text-sm leading-relaxed text-[#1a1a2e]/60">
-                Alan handles every estimate personally and leads the crew on
-                every project. With 10+ years of hands-on experience across
-                interior, exterior, cabinet, and specialty coating work — he
-                brings a craftsman's eye to every single job.
+                The backbone of our craftsmanship. With decades of hands-on
+                experience, Gamaliel oversees all on-site work, bringing
+                unmatched skill and a master&apos;s touch to every surface we
+                paint.
+              </p>
+            </div>
+          </div>
+
+          {/* Jose */}
+          <div className="overflow-hidden rounded-2xl border border-gainsboro bg-white">
+            <div className="flex h-72 w-full items-center justify-center bg-gainsboro/50">
+              {/* TODO: Replace with Jose's photo once received */}
+              <p className="text-xs font-medium text-[#1a1a2e]/40">Photo coming soon</p>
+            </div>
+            <div className="p-7">
+              <h3 className="text-xl font-bold text-[#1a1a2e]">Jose Pacheco</h3>
+              <p className="mt-1 text-sm font-semibold text-denim">
+                Project Manager & Client Relations
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-[#1a1a2e]/60">
+                Jose is your primary point of contact for project planning. He
+                handles all walkthroughs, listening closely to your needs to
+                ensure the final result perfectly matches your vision.
               </p>
             </div>
           </div>
 
           {/* Kimberly */}
           <div className="overflow-hidden rounded-2xl border border-gainsboro bg-white">
-            <div className="h-72 w-full">
-              {/* TODO: Replace with Kimberly's headshot once received */}
-              <PhotoPlaceholder label="Kimberly — photo coming soon" />
+            <div className="flex h-72 w-full items-center justify-center bg-gainsboro/50">
+              {/* TODO: Replace with Kimberly's photo once received */}
+              <p className="text-xs font-medium text-[#1a1a2e]/40">Photo coming soon</p>
             </div>
             <div className="p-7">
-              <h3 className="text-xl font-bold text-[#1a1a2e]">Kimberly</h3>
+              <h3 className="text-xl font-bold text-[#1a1a2e]">
+                Kimberly Pacheco
+              </h3>
               <p className="mt-1 text-sm font-semibold text-denim">
-                Operations & Client Experience
+                Office Administrator
               </p>
               <p className="mt-3 text-sm leading-relaxed text-[#1a1a2e]/60">
-                Kimberly keeps everything running smoothly — from the first
-                estimate inquiry to the final follow-up. She manages scheduling,
-                client communications, and makes sure every project stays on
-                track and every client feels taken care of.
+                Kimberly keeps our operations running smoothly. She handles all
+                calls and texts, ensuring clear communication and timely
+                scheduling for every client.
               </p>
             </div>
           </div>

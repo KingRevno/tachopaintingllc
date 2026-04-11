@@ -197,7 +197,7 @@ function buildCustomerEmail(data: QuoteFormData): string {
       <p>We look forward to working with you.</p>
 
       <div class="signature">
-        <strong>Alan Juarez-Mendoza</strong>
+        <strong>Alan Juarez</strong>
         Tacho Painting LLC<br />
         📞 ${BUSINESS_PHONE}<br />
         ✉️ ${BUSINESS_EMAIL}

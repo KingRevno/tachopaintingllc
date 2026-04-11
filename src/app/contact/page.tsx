@@ -18,7 +18,7 @@ const PROCESS_STEPS = [
   {
     num: "02",
     title: "We reach out within 1 business day",
-    desc: "Alan or Kimberly will contact you via your preferred method to confirm.",
+    desc: "Jose or Kimberly will contact you via your preferred method to confirm.",
   },
   {
     num: "03",

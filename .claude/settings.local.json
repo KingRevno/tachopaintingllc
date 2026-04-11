@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\D98C3573-38B4-49FE-9EA5-695A44A58A30.PNG\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\images\\\\logo.png\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\alan body shot.jpg\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\images\\\\alan.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\D98C3573-38B4-49FE-9EA5-695A44A58A30.PNG\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\src\\\\app\\\\icon.png\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\IMG_4428.JPG\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\gallery\\\\door-stain-exterior.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\IMG_4433.jpeg\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\gallery\\\\soffit-trim-exterior.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\IMG_4436.JPG\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\gallery\\\\blue-house-yardsign.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\IMG_4438.jpeg\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\gallery\\\\blue-house-full.jpg\")",
+      "Bash(cp \"C:\\\\Users\\\\marce\\\\OneDrive\\\\Pictures\\\\Tacho Painting LLC\\\\alan\\\\IMG_4439.JPG\" \"C:\\\\Users\\\\marce\\\\tachopaintingllc\\\\public\\\\gallery\\\\outbuilding-exterior.jpg\")",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

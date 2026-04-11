@@ -494,7 +494,7 @@ function SuccessCard() {
         Your request is on its way!
       </h3>
       <p className="mt-3 max-w-sm text-base text-[#1a1a2e]/65">
-        Alan or Kimberly will reach out within 1 business day to confirm your
+        Jose or Kimberly will reach out within 1 business day to confirm your
         estimate appointment.
       </p>
       <p className="mt-3 text-xs text-[#1a1a2e]/40">
