@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   title: BUSINESS.seo.defaultTitle,
   description: BUSINESS.seo.defaultDescription,
   keywords: [...BUSINESS.seo.keywords],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
